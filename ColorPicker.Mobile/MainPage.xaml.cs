@@ -2,23 +2,27 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
         }
 
-        private void OnCounterClicked(object sender, EventArgs e)
+        private void slider_ValueChanged(object sender, ValueChangedEventArgs e)
         {
-            count++;
+            double red = sldRed.Value;
+            double green = sldGreen.Value;
+            double blue = sldBlue.Value;
 
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
+            Color color = Color.FromRgb(red, green, blue);
 
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            SetColor(color);
+        }
+
+        private void SetColor(Color color)
+        {
+            btnRandom.BackgroundColor = color;
+            container.BackgroundColor = color;
+            lblHex.Text = color.ToHex();
         }
     }
 }
