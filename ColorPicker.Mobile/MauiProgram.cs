@@ -1,10 +1,14 @@
-﻿namespace ColorPicker.Mobile
+﻿using CommunityToolkit.Maui;
+
+namespace ColorPicker.Mobile
 {
     public static class MauiProgram
     {
         public static MauiApp CreateMauiApp()
         {
             var builder = MauiApp.CreateBuilder();
+            builder.UseMauiApp<App>().UseMauiCommunityToolkit();
+
             builder
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>

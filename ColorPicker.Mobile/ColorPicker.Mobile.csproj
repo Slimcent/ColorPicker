@@ -53,4 +53,8 @@
 	  <None Remove="Resources\Images\copy1.svg" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Include="CommunityToolkit.Maui" Version="1.1.0" />
+	</ItemGroup>
+
 </Project>
